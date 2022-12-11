@@ -5,20 +5,21 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    private boolean isCheeseAdded;
-    private boolean isToppingAdded;
-    private boolean isPaperbagAdded;
-    private boolean isBillGenerated;
+    private boolean isCheeseAdd;
+    private boolean isToppingsAdd;
+    private boolean isPaperBagAdd;
+    private boolean isBillGenerat;
+
     private int extraCheese;
     private int extraTopping;
     private int paperBag;
 
 
-    public Pizza(Boolean isVeg){
-        isCheeseAdded = false;
-        isToppingAdded = false;
-        isBillGenerated = false;
-        isPaperbagAdded = false;
+    public Pizza(Boolean isVeg) {
+        isBillGenerat = false;
+        isCheeseAdd = false;
+        isToppingsAdd = false;
+        isPaperBagAdd = false;
 
         this.isVeg = isVeg;
 
@@ -34,49 +35,56 @@ public class Pizza {
             extraTopping = 120;
         }
         bill = "Base Price Of The Pizza: " + price + "\n";
-        // your code goes here
     }
 
-    public int getPrice(){
+    public int getPrice() {
+
         return this.price;
     }
 
-    public void addExtraCheese(){
+
+    public void addExtraCheese() {
         // your code goes here
-        if(!isCheeseAdded){
+        if (!isCheeseAdd) {
             price += extraCheese;
-            isCheeseAdded = true;
+            isCheeseAdd = true;
         }
     }
 
-    public void addExtraToppings(){
-        if(!isToppingAdded){
+    public void addExtraToppings() {
+        // your code goes here
+        if (!isToppingsAdd) {
             price += extraTopping;
-            isToppingAdded = true;
+            isToppingsAdd = true;
         }
     }
 
-    public void addTakeaway(){
-        if(!isPaperbagAdded){
+    public void addTakeaway() {
+        // your code goes here
+        if (!isPaperBagAdd) {
             price += paperBag;
-            isPaperbagAdded = true;
+            isPaperBagAdd = true;
         }
     }
 
-    public String getBill(){
-        if(!isBillGenerated){
-            isBillGenerated = true;
+    public String getBill() {
+        // your code goes here
+        if (!isBillGenerat) {
+            isBillGenerat = true;
 
-            if(isCheeseAdded)
+            if (isCheeseAdd)
                 bill += "Extra Cheese Added: " + extraCheese + "\n";
 
-            if(isToppingAdded)
-                bill += "Extra Topping Added: " + extraTopping + "\n";
+            if (isToppingsAdd)
+                bill += "Extra Toppings Added: " + extraTopping + "\n";
 
-            if(isPaperbagAdded)
+            if (isPaperBagAdd)
                 bill += "Paperbag Added: " + paperBag + "\n";
 
+
             bill += "Total Price: " + price + "\n";
+
+
         }
         return this.bill;
     }
